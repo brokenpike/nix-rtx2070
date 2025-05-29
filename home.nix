@@ -11,6 +11,7 @@
   lsp-ai
   nil
   nix-output-monitor
+  vim
   lm_sensors
   ];
 
