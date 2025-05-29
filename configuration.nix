@@ -110,7 +110,26 @@
     nvtopPackages.nvidia
     # alacritty
     tilix
+    python3Packages.pytorch-bin
+    python3Packages.openai-whisper
+
   ];
+
+  # whisper ai with cuda
+    nixpkgs.config.cudaSupport = true;
+
+nix.settings = {
+  substituters = [ "https://nix-community.cachix.org"];
+  trusted-public-keys = [
+    # Compare to the key published at https://nix-community.org/cache
+    "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+  ];
+};
+
+#  environment.systemPackages = with pkgs; [
+ #   python3Packages.pytorch-bin
+ #   python3Packages.openai-whisper
+ # ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
