@@ -13,12 +13,16 @@
   nix-output-monitor
   vim
   lm_sensors
+  git
+  git-credential-manager
   ];
 
   programs.git = {
     enable = true;
     userName = "brokenpike";
     userEmail = "brokenpike@garmr.org";
+    extraConfig.credential.helper = "manager";
+    extraConfig.credential.credentialStore = "cache";
   };
 
   home.stateVersion = "25.05";
